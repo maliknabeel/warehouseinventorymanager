@@ -1,10 +1,13 @@
 package com.pwi.entities;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Transactional
 @Table(name = "product_measurement", schema = "vtb_pwi")
 public class ProductMeasurementEntity implements Serializable {
     private int idProductMeasurement;

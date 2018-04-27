@@ -1,5 +1,8 @@
 package com.pwi.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
@@ -7,6 +10,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "brands", schema = "vtb_pwi")
+@Transactional
 public class BrandsEntity implements Serializable {
     private int idBrands;
     private String brandName;
@@ -62,7 +66,7 @@ public class BrandsEntity implements Serializable {
         return Objects.hash(idBrands, brandName, brandDescription);
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "brand_country", referencedColumnName = "id_country", nullable = false)
     public CountryEntity getCountryByBrandCountry() {
         return countryByBrandCountry;
@@ -72,7 +76,7 @@ public class BrandsEntity implements Serializable {
         this.countryByBrandCountry = countryByBrandCountry;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "brand_category", referencedColumnName = "id_category", nullable = false)
     public CategoriesEntity getCategoriesByBrandCategory() {
         return categoriesByBrandCategory;
@@ -82,7 +86,8 @@ public class BrandsEntity implements Serializable {
         this.categoriesByBrandCategory = categoriesByBrandCategory;
     }
 
-    @OneToMany(mappedBy = "brandsByProductBrand")
+    @OneToMany(mappedBy = "brandsByProductBrand", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
     public Collection<ProductsEntity> getProductsByIdBrands() {
         return productsByIdBrands;
     }

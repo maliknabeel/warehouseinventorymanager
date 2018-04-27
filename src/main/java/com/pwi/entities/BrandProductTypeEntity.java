@@ -1,11 +1,14 @@
 package com.pwi.entities;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "brand_product_type", schema = "vtb_pwi")
+@Transactional
 public class BrandProductTypeEntity implements Serializable {
     private int idProductType;
     private String productType;

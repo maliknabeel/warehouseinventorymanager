@@ -4,6 +4,8 @@ import com.pwi.entities.ProductsEntity;
 import com.pwi.repositories.IProductsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,7 +14,6 @@ public class ProductServices {
 
     @Autowired
     IProductsRepository productsRepository;
-
     public List<ProductsEntity> getProductsList() {
         return productsRepository.findAll();
     }

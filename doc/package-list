@@ -1,0 +1,5 @@
+com.pwi.config
+com.pwi.controller
+com.pwi.entities
+com.pwi.repositories
+com.pwi.services

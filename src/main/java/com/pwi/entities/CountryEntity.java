@@ -1,11 +1,14 @@
 package com.pwi.entities;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "country", schema = "vtb_pwi")
+@Transactional
 public class CountryEntity implements Serializable {
     private int idCountry;
     private String countryCode;

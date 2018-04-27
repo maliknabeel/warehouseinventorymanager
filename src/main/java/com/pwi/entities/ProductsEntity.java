@@ -1,11 +1,15 @@
 package com.pwi.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "products", schema = "vtb_pwi")
+@Transactional
 public class ProductsEntity implements Serializable {
     private int idProducts;
     private String productName;
@@ -50,8 +54,9 @@ public class ProductsEntity implements Serializable {
         return Objects.hash(idProducts, productName);
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_brand", referencedColumnName = "id_brands", nullable = false)
+//    @JsonIgnore
     public BrandsEntity getBrandsByProductBrand() {
         return brandsByProductBrand;
     }
@@ -60,8 +65,9 @@ public class ProductsEntity implements Serializable {
         this.brandsByProductBrand = brandsByProductBrand;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_country", referencedColumnName = "id_country", nullable = false)
+//    @JsonIgnore
     public CountryEntity getCountryByProductCountry() {
         return countryByProductCountry;
     }
@@ -70,8 +76,9 @@ public class ProductsEntity implements Serializable {
         this.countryByProductCountry = countryByProductCountry;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_type", referencedColumnName = "id_product_type", nullable = false)
+//    @JsonIgnore
     public BrandProductTypeEntity getBrandProductTypeByProductType() {
         return brandProductTypeByProductType;
     }
@@ -80,8 +87,9 @@ public class ProductsEntity implements Serializable {
         this.brandProductTypeByProductType = brandProductTypeByProductType;
     }
 
-    @ManyToOne
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_measurement", referencedColumnName = "id_product_measurement", nullable = false)
+//    @JsonIgnore
     public ProductMeasurementEntity getProductMeasurementByProductMeasurement() {
         return productMeasurementByProductMeasurement;
     }
