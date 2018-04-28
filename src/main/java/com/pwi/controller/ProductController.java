@@ -47,6 +47,7 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.DELETE)
     public ResponseEntity<Object> removeAProduct(@RequestBody ProductsEntity productsEntity){
         logger.info("Removing a product");
+        productServices.deletePProduct(productsEntity);
         return new ResponseEntity<>(new ResponseBody(true, "Product Deleted"), HttpStatus.OK);
     }
 
