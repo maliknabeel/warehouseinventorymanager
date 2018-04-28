@@ -28,4 +28,5 @@ public class InventoryServices {
     public void deleteInventory(InventoryEntity inventoryEntity) {
         inventoryRepository.delete(inventoryEntity);
     }
+
 }
