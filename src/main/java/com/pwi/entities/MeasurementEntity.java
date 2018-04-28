@@ -1,15 +1,11 @@
 package com.pwi.entities;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Transactional
-@Table(name = "product_measurement", schema = "vtb_pwi")
-public class ProductMeasurementEntity implements Serializable {
+@Table(name = "measurement", schema = "vtb_pwi")
+public class MeasurementEntity {
     private int idProductMeasurement;
     private String productMeasurementSize;
     private String productMeasurementDescription;
@@ -17,7 +13,6 @@ public class ProductMeasurementEntity implements Serializable {
 
     @Id
     @Column(name = "id_product_measurement")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getIdProductMeasurement() {
         return idProductMeasurement;
     }
@@ -60,7 +55,7 @@ public class ProductMeasurementEntity implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductMeasurementEntity that = (ProductMeasurementEntity) o;
+        MeasurementEntity that = (MeasurementEntity) o;
         return idProductMeasurement == that.idProductMeasurement &&
                 Objects.equals(productMeasurementSize, that.productMeasurementSize) &&
                 Objects.equals(productMeasurementDescription, that.productMeasurementDescription) &&

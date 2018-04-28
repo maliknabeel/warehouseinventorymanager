@@ -1,6 +1,5 @@
 package com.pwi.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
@@ -16,7 +15,6 @@ public class ProductsEntity implements Serializable {
     private BrandsEntity brandsByProductBrand;
     private CountryEntity countryByProductCountry;
     private BrandProductTypeEntity brandProductTypeByProductType;
-    private ProductMeasurementEntity productMeasurementByProductMeasurement;
 
     @Id
     @Column(name = "id_products")
@@ -67,7 +65,6 @@ public class ProductsEntity implements Serializable {
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_country", referencedColumnName = "id_country", nullable = false)
-//    @JsonIgnore
     public CountryEntity getCountryByProductCountry() {
         return countryByProductCountry;
     }
@@ -78,23 +75,11 @@ public class ProductsEntity implements Serializable {
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "product_type", referencedColumnName = "id_product_type", nullable = false)
-//    @JsonIgnore
     public BrandProductTypeEntity getBrandProductTypeByProductType() {
         return brandProductTypeByProductType;
     }
 
     public void setBrandProductTypeByProductType(BrandProductTypeEntity brandProductTypeByProductType) {
         this.brandProductTypeByProductType = brandProductTypeByProductType;
-    }
-
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_measurement", referencedColumnName = "id_product_measurement", nullable = false)
-//    @JsonIgnore
-    public ProductMeasurementEntity getProductMeasurementByProductMeasurement() {
-        return productMeasurementByProductMeasurement;
-    }
-
-    public void setProductMeasurementByProductMeasurement(ProductMeasurementEntity productMeasurementByProductMeasurement) {
-        this.productMeasurementByProductMeasurement = productMeasurementByProductMeasurement;
     }
 }
