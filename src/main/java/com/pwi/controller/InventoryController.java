@@ -2,8 +2,8 @@ package com.pwi.controller;
 
 import com.pwi.services.InventoryCustomReportService;
 import com.pwi.services.InventoryServices;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/inventory")
 public class InventoryController {
 
-    private static Logger logger = LogManager.getLogger();
+    public Logger logger =  LoggerFactory.getLogger(InventoryController.class);
 
     @Autowired
     InventoryServices inventoryServices;
@@ -32,7 +32,7 @@ public class InventoryController {
 
     @RequestMapping(value = "{cid}", method = RequestMethod.GET)
     public ResponseEntity<Object> getInventoryDetails(@PathVariable int cid){
-        logger.info("The value for country id is" + cid);
+        logger.info("The value for country ID :: " + cid);
         return new ResponseEntity<>(inventoryCustomReportService.getInventoryReportByCountryId(cid), HttpStatus.OK);
     }
 }
