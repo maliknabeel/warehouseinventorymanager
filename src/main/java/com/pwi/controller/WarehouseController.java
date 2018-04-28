@@ -24,7 +24,7 @@ public class WarehouseController {
         return new ResponseEntity<>(warehouseServices.getWarehouseList(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{warehouseid}" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/{warehouseId}" ,method = RequestMethod.GET)
     public ResponseEntity<Object> getDetailsOfAWarehouse(@PathVariable int warehouseId){
         return new ResponseEntity<>(warehouseServices.getWarehouseById(warehouseId), HttpStatus.OK);
     }
