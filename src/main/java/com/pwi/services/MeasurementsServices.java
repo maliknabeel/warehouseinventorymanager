@@ -1,9 +1,7 @@
 package com.pwi.services;
 
 import com.pwi.entities.MeasurementEntity;
-import com.pwi.entities.ProductMeasurementsEntity;
 import com.pwi.repositories.IMeasurementsRepository;
-import com.pwi.repositories.IProductMeasurementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +27,9 @@ public class MeasurementsServices {
 
     public void deletePrdMeasurement(MeasurementEntity measurementEntity) {
         measurementsRepository.delete(measurementEntity);
+    }
+
+    public List<MeasurementEntity> getMeasurementsForAProduct(int productId) {
+        return measurementsRepository.getMeasurementsForAProduct(productId);
     }
 }

@@ -24,14 +24,17 @@ entities = {
 })
 
 @NamedNativeQuery(name="inventoryByCountry",
-        query = "SELECT i.id_inventory as idInventoryReport, w.warehouse_name as warehouseName, p.product_name as item, m.product_measurement_size as size, i.finished_inventory_count as finishedInventoryCount, " +
-                "i.inventory_in_stock as inventoryInStock,i.inventory_in_transit as inventoryInTransit," +
-                "i.inventory_avaliable_qty as inventoryAvaliableQty,i.inventory_moq as inventoryMoq," +
-                "i.inventory_reorder_point as inventoryReorderPoint\n" +
-                "from warehouse w,inventory i, products p, product_measurement m \n" +
+        query = "SELECT i.id_inventory as idInventoryReport, w.warehouse_name as warehouseName, " +
+                "p.product_name as item, m.product_measurement_size as size, " +
+                "i.finished_inventory_count as finishedInventoryCount,i.inventory_in_stock as inventoryInStock," +
+                "i.inventory_in_transit as inventoryInTransit," +
+                "i.inventory_avaliable_qty as inventoryAvaliableQty," +
+                "i.inventory_moq as inventoryMoq, i.inventory_reorder_point as inventoryReorderPoint \n" +
+                "from warehouse w,inventory i, products p, product_measurements pm, measurement m\n" +
                 "where i.warehouse_id = w.id_warehouse \n" +
                 "AND i.inventory_product = p.id_products\n" +
-                "AND p.product_measurement = m.id_product_measurement\n" +
+                "AND p.id_products = pm.idproduct_measurements\n" +
+                "AND pm.idproduct_measurements = m.id_product_measurement\n" +
                 "AND w.warehouse_country = ?",
         resultClass = InventoryReportByCountry.class
 )

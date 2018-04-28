@@ -62,9 +62,6 @@ public class ProductServicesTests {
         BrandsEntity brandsEntity = new BrandsEntity();
         brandsEntity.setIdBrands(5);
 
-        ProductMeasurementEntity productMeasurementEntity = new ProductMeasurementEntity();
-        productMeasurementEntity.setIdProductMeasurement(5);
-
         BrandProductTypeEntity brandProductTypeEntity = new BrandProductTypeEntity();
         brandProductTypeEntity.setIdProductType(5);
 
@@ -73,7 +70,6 @@ public class ProductServicesTests {
         productsEntity.setProductName("Test Product 5");
         productsEntity.setCountryByProductCountry(countryEntity);
         productsEntity.setBrandsByProductBrand(brandsEntity);
-        productsEntity.setProductMeasurementByProductMeasurement(productMeasurementEntity);
         productsEntity.setBrandProductTypeByProductType(brandProductTypeEntity);
         productsList.add(productsEntity);
 
@@ -82,7 +78,6 @@ public class ProductServicesTests {
         productsEntity.setProductName("Test Product 6");
         productsEntity.setCountryByProductCountry(countryEntity);
         productsEntity.setBrandsByProductBrand(brandsEntity);
-        productsEntity.setProductMeasurementByProductMeasurement(productMeasurementEntity);
         productsEntity.setBrandProductTypeByProductType(brandProductTypeEntity);
         productsList.add(productsEntity);
     }

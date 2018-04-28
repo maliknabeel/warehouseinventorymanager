@@ -5,6 +5,15 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "measurement", schema = "vtb_pwi")
+
+//@NamedNativeQuery(name="productMeasurements",
+//        query = "select m.product_measurement_size, m.product_measurement_description, m.product_measurement_unit from measurement m, products p, product_measurements pm\n" +
+//                "where pm.product_id = p.id_products\n" +
+//                "and pm.measurement_id = m.id_product_measurement\n" +
+//                "and pm.product_id = ?",
+//        resultClass = MeasurementEntity.class
+//)
+
 public class MeasurementEntity {
     private int idProductMeasurement;
     private String productMeasurementSize;
