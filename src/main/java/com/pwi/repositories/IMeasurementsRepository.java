@@ -12,7 +12,9 @@ import java.util.List;
 public interface IMeasurementsRepository extends JpaRepository<MeasurementEntity,Integer> {
 
     @Query( name = "productsMeasurements",
-            value = "select m.id_product_measurement, m.product_measurement_size, m.product_measurement_description, m.product_measurement_unit from measurement m, products p, product_measurements pm\n" +
+            value = "select m.id_product_measurement, m.product_measurement_size, " +
+                    "m.product_measurement_description, m.product_measurement_unit " +
+                    "from measurement m, products p, product_measurements pm\n" +
             "where pm.product_id = p.id_products\n" +
             "and pm.measurement_id = m.id_product_measurement\n" +
             "and pm.product_id = :productId",
