@@ -42,7 +42,7 @@ Each product, component and packaging material can have different sizes.
 * IntelliJ IDEA or any other IDE
 ````
 
-##Project Setup
+## Project Setup
 ### Github Checkout
 #### Https
 ```https://github.com/maliknabeel/warehouseinventorymanager.git```
