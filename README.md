@@ -72,11 +72,11 @@ Exit from MySQL shell.
 ## Application Deployment
 
 ### Tests Execution
-* Project is alreadt imported into the IntelliJ IDE. 
+* Project is already imported into the IntelliJ IDE. 
 * Right click on the project and select ```Run All Tests ...```
 ![Run ALl Tests](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/run-tests.png)
 
-### Deploy Application using IntelliJ IDE
+### Maven application build
 * Go to ```Run``` > ```Edit Configuration```
 ![Run ALl Tests](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/edit-config.png)
 
@@ -85,6 +85,47 @@ Exit from MySQL shell.
 
 * Give maven profile a name and maven execution command ```clean compile tomcat:redloy```. 
 ![Select Maven](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/maven-build-deploy.png)
+
+### Tomcat Build Deploy
+* Project is already imported into the IntelliJ IDE. 
+
+* Go to ```Run``` > ```Edit Configuration```
+![Run ALl Tests](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/edit-config.png)
+
+* Click the ```+``` on top left corner of dialog box and select ```Tomcat``` and then ```local```. 
+![Tomcat Profile](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/tomcat-deploy.png)
+
+* Give tomcat profile a name.
+
+* Select ```Configure``` from the ```Server``` tab and set the tomcat directory path.
+
+* On the bottom of screen click `````+````` and select ```Build Artifect```. 
+
+* On the screen select the war file ```pwi.war``` to be deployed in the ```WebApps``` folder as ```ROOT``` application.    
+![Tomcat Build Deploy](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/tomcat-build-deploy.png)
+
+* On the main the screen, first build the using ```Maven Profile``` and then deploy using the ```Tomcat Profile```.  
+![Maven and Tomcat Build then Deploy](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/running-maven-tomcat.png)
+
+### Accessing Services via Postman
+The services can be access via Postman. Important services are
+
+##### Warehouse Inventory Report by Country
+**Description:** ```Get warehouse wise inventory status for a given country.```
+**URI: ** ```country/{countryId}/inventory```
+
+##### Product Report by Brand Name
+**Description:** ```Get details of produts for a given brand.```
+**URI: ** ```brands/{brandId}/products```
+
+##### Packaging Information for a Product
+**Description:** ```Get details of packaging for a particular product.```
+**URI: ** ```product/{productId}/measurements```  
+
+Beside this other entities such as ```warehouse``` , ```brands``` , ```countries``` , ```packagaing``` all have there respective CRUD operations. 
+
+
+
 
 
 
