@@ -110,17 +110,20 @@ Exit from MySQL shell.
 ### Accessing Services via Postman
 The services can be access via Postman. Important services are
 
-##### Warehouse Inventory Report by Country
+#### Warehouse Inventory Report by Country
 **Description:** ```Get warehouse wise inventory status for a given country.```
-**URI: ** ```country/{countryId}/inventory```
 
-##### Product Report by Brand Name
+**URI:** ```country/{countryId}/inventory```
+
+#### Product Report by Brand Name
 **Description:** ```Get details of produts for a given brand.```
-**URI: ** ```brands/{brandId}/products```
 
-##### Packaging Information for a Product
+**URI:** ```brands/{brandId}/products```
+
+#### Packaging Information for a Product
 **Description:** ```Get details of packaging for a particular product.```
-**URI: ** ```product/{productId}/measurements```  
+
+**URI:** ```product/{productId}/measurements```  
 
 Beside this other entities such as ```warehouse``` , ```brands``` , ```countries``` , ```packagaing``` all have there respective CRUD operations. 
 
