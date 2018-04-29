@@ -4,6 +4,11 @@ import com.pwi.entities.PkgingInformationEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Repository
 public interface IPkgingInformationRepository extends JpaRepository<PkgingInformationEntity, Integer> {
 }

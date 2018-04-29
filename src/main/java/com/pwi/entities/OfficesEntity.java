@@ -4,6 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "offices", schema = "vtb_pwi")
 public class OfficesEntity implements Serializable {

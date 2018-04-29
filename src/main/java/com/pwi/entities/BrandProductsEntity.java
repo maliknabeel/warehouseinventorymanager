@@ -2,6 +2,11 @@ package com.pwi.entities;
 
 import javax.persistence.*;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @SqlResultSetMapping(name="brandProductsCountryMapping",
         entities = {

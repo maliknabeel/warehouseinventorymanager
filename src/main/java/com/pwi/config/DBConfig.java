@@ -1,6 +1,5 @@
 package com.pwi.config;
 
-import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.datatype.hibernate4.Hibernate4Module;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +18,11 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Configuration
 @EnableTransactionManagement
 @PropertySource("classpath:hibernate.properties")
@@ -32,7 +36,6 @@ public class DBConfig {
 
     private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
     private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-    private static final String PROPERTY_NAME_DDL_HIBERNATE_SHOW_SQL = "hibernate.hbm2ddl.auto";
     private static final String PROPERTY_NAME_ENTITYMANAGER_PACKAGES_TO_SCAN = "package.entities";
 
     @Resource
@@ -40,7 +43,6 @@ public class DBConfig {
 
     @Bean
     public DataSource dataSource() {
-
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(env.getRequiredProperty(PROPERTY_NAME_DATABASE_DRIVER));
         dataSource.setUrl(env.getRequiredProperty(PROPERTY_NAME_DATABASE_URL));

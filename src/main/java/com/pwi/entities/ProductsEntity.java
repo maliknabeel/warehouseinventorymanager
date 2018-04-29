@@ -6,6 +6,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "products", schema = "vtb_pwi")
 @Transactional

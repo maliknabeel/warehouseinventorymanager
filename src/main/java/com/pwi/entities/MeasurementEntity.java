@@ -3,6 +3,11 @@ package com.pwi.entities;
 import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "measurement", schema = "vtb_pwi")
 

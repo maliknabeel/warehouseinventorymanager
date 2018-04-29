@@ -8,6 +8,11 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "brands", schema = "vtb_pwi")
 @Transactional

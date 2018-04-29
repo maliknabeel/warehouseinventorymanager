@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
 @Controller
 @RequestMapping("/inventory")
 public class InventoryController {

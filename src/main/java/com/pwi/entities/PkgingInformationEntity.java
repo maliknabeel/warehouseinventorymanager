@@ -4,6 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Entity
 @Table(name = "pkging_information", schema = "vtb_pwi")
 public class PkgingInformationEntity implements Serializable {

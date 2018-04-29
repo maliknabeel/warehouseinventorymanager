@@ -11,6 +11,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
+
 @Repository
 @Transactional(readOnly = true)
 public class InventoryCustomReportsImpl implements IInventoryCustomReports {

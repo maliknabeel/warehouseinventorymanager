@@ -10,6 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * @author Nabeel Ahmed
+ * @version 1.0
+ */
 @Controller
 @RequestMapping("brands")
 public class BrandsController {
