@@ -48,7 +48,45 @@ Each product, component and packaging material can have different sizes.
 ```git@github.com:maliknabeel/warehouseinventorymanager.git```
 
 ## Database
-
+Execute following commands as root user. 
 ### DB Schema
 ![PWI Database Schema](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/db-schema/pwi.png)
+
+### Schema Creation
+``` CREATE SCHEMA `vtb_pwi` ; ```
+
+### Create User
+```create user 'vtbpwi'@'localhost' identified by 'vtb@pwi@123456';```
+
+### Grant Permissions
+```grant all on vtb_pwi.* to 'vtbpwi'@'localhost';```
+
+### Import Database Schema with Sample Data
+Exit from MySQL shell.
+ 
+ Go to  ``` <Workspace>\warehouseinventorymanager\db-schema```
+ ````
+ mysql pwi < pwi.sql -u vtbpwi -p
+ Enter password: vtb@pwi@123456
+````
+## Application Deployment
+
+### Tests Execution
+* Project is alreadt imported into the IntelliJ IDE. 
+* Right click on the project and select ```Run All Tests ...```
+![Run ALl Tests](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/run-tests.png)
+
+### Deploy Application using IntelliJ IDE
+* Go to ```Run``` > ```Edit Configuration```
+![Run ALl Tests](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/edit-config.png)
+
+* Click the ```+``` on top left corner of dialog box and select ```Maven```. 
+![Select Maven](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/sel-maven.png)
+
+* Give maven profile a name and maven execution command ```clean compile tomcat:redloy```. 
+![Select Maven](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/images/maven-build-deploy.png)
+
+
+
+
 
