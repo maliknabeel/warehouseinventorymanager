@@ -1,6 +1,7 @@
 package com.pwi.controller;
 
 import com.pwi.entities.BrandsEntity;
+import com.pwi.services.BrandProductsService;
 import com.pwi.services.BrandsServices;
 import com.pwi.utils.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,9 @@ public class BrandsController {
 
     @Autowired
     BrandsServices brandsServices;
+
+    @Autowired
+    BrandProductsService brandProductsService;
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Object> getAllBrands(){
@@ -40,5 +44,10 @@ public class BrandsController {
     public ResponseEntity<Object> deleteBrand(@RequestBody BrandsEntity brandsEntity){
         brandsServices.deleteBrand(brandsEntity);
         return new ResponseEntity<>(new ResponseBody(true, "Deletion Successful"), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/{brandId}/products",method = RequestMethod.GET)
+    public ResponseEntity<Object> getBrandProducts(@PathVariable int brandId){
+        return new ResponseEntity<>(brandProductsService.getBrandProducts(brandId), HttpStatus.OK);
     }
 }
