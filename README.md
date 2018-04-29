@@ -34,13 +34,11 @@ Components are not sellable and only internal to the company and same goes for p
 Each product, component and packaging material can have different sizes.
 
 ## Requirements
-````
 * Java 8 +
 * Apache tomcat 8.5.xx
 * MySql 5.7.20
 * Git 2.14.3
 * IntelliJ IDEA or any other IDE
-````
 
 ## Project Setup
 ### Github Checkout
@@ -49,5 +47,8 @@ Each product, component and packaging material can have different sizes.
 #### Ssh
 ```git@github.com:maliknabeel/warehouseinventorymanager.git```
 
+## Database
 
+### DB Schema
+![PWI Database Schema](https://github.com/maliknabeel/warehouseinventorymanager/blob/master/db-schema/pwi.png)
 
