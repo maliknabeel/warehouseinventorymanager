@@ -16,7 +16,7 @@
         <spring.version>5.0.5.RELEASE</spring.version>
         <spring-data-version>2.0.6.RELEASE</spring-data-version>
         <spring-data-rest-version>3.0.6.RELEASE</spring-data-rest-version>
-        <hibernate.version>4.3.11.Final</hibernate.version>
+        <hibernate.version>5.3.20.Final</hibernate.version>
         <hibernate.persistance.version>4.3.11.Final</hibernate.persistance.version>
         <mysql.connector.version>5.1.46</mysql.connector.version>
         <mockito.version>2.18.3</mockito.version>
